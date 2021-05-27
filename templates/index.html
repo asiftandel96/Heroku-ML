@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Fare Prediction</h1>
+
+    <div class="form">
+        <form action="/predict" method="POST">
+            <input type="number" name="pickup_longitude" id="pickup_longitude" placeholder="pickup_longitude">
+            <input type="number" name="pickup_latitude" id="pickup_latitude" placeholder="pickup_latitude">
+            <input type="number" name="dropoff_longitude" id="dropoff_longitude" placeholder="dropoff_longitude">
+            <input type="number" name="dropoff_latitude" id="dropoff_latitude" placeholder="dropoff_latitude">
+            <input type="number" name="passengerInTaxi" id="passengerInTaxi" placeholder="passengerInTaxi">
+            <select name="week_day" id="week_day">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+             <input type="number" name="hours" id="hours" placeholder="hours">
+
+
+            <input type="submit" value="Predict">
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
